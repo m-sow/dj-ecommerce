@@ -1,3 +1,5 @@
+from email.mime import image
+from typing import Tuple
 from django.db import models
 from django.conf import settings
 from django.shortcuts import reverse
@@ -24,6 +26,7 @@ class Item(models.Model):
     label = models.CharField(choices=LABEL_CHOICES, max_length=1)
     slug = models.SlugField()
     description = models.TextField()
+    image=models.ImageField()
 
     def __str__(self):
         return self.title
